@@ -1,15 +1,13 @@
 import Link from "next/link"
+import A from "../components/A"
 
 const Index = () => {
 	return (
 	<div>
 		<div className="navbar">
-			<Link href="/" legacyBehavior>
-				<a className="link">Main</a>
-			</Link>
-			<Link href="/users" legacyBehavior>
-				<a className="link">Users</a>
-			</Link>
+			<A href={'/'} text='Main' isLegasy={true} />
+			<A href={'/users'} text='Users' isLegasy={true} />
+
 		</div>
 		<h1>Main Page</h1>
 		<style jsx>
