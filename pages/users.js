@@ -1,12 +1,7 @@
 import { useState } from "react"
 import A from "../components/A";
 
-const Users = () => {
-	const [users, setUsers] = useState([
-		{ id: 1, name: "petya" },
-		{ id: 2, name: "vasya" },
-	]);
-
+const Users = ({ users }) => {
 	return (
 		<div>
 			<h1>Users List</h1>
@@ -22,3 +17,13 @@ const Users = () => {
 }
 
 export default Users
+
+// Static Generation - render all pages at build time
+export async function getStaticProps() {
+	const response = await fetch(`https://jsonplaceholder.typicode.com/users`)
+	const users = await response.json()
+	
+	return {
+		props: {users}, // will be passed to the page component as props
+	}
+}
