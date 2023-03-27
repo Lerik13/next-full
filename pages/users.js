@@ -1,9 +1,10 @@
 import { useState } from "react"
 import A from "../components/A";
+import MainContainer from "../components/MainContainer";
 
 const Users = ({ users }) => {
 	return (
-		<div>
+		<MainContainer keywords={"Users List"}>
 			<h1>Users List</h1>
 			<ul>
 				{users.map(user => 
@@ -12,7 +13,7 @@ const Users = ({ users }) => {
 					</li>
 				)}
 			</ul>
-		</div>
+		</MainContainer>
 	)
 }
 
